@@ -1453,7 +1453,7 @@
                 <!-- Proyectos en Producción/Landing Pages -->
                 <div class="project-card">
                     <div class="project-image">
-                        <div>🚀 SaaS Platform</div>
+                        <img src="assets/images/projects/findashboard-miniatura.png" alt="FinDashboard Pro - SaaS Platform" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
@@ -1477,7 +1477,7 @@
                 
                 <div class="project-card">
                     <div class="project-image">
-                        <div>🏢 B2B Platform</div>
+                        <img src="assets/images/projects/consultory-miniatura.png" alt="Strategic Consulting Solutions - B2B Platform" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
@@ -1501,7 +1501,7 @@
                 
                 <div class="project-card">
                     <div class="project-image">
-                        <div>📱 E-commerce</div>
+                        <img src="assets/images/projects/techgadget-miniatura.png" alt="TechGadget Elite - E-commerce" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
@@ -1526,19 +1526,19 @@
                 <!-- Proyecto Terminado para Cliente -->
                 <div class="project-card completed">
                     <div class="project-image">
-                        <div>🏍️ Cliente Terminado</div>
+                        <div style="background: linear-gradient(45deg, #ff6b35, #f7931e); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; height: 100%;">🏍️</div>
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <div>
                                 <h3 class="project-title">Daytona Motos - Concesionaria</h3>
-                                <p class="project-description">Sitio web completo para concesionaria de motocicletas. Incluye catálogo de motos, información de servicios, formulario de contacto y sistema de reservas online.</p>
+                                <p class="project-description">Sitio web completo para concesionaria de motocicletas desarrollado con JavaScript, CSS y HTML puro. Incluye catálogo de motos, información de servicios y formulario de contacto.</p>
                             </div>
                         </div>
                         <div class="project-tech">
-                            <span class="tech-tag">WordPress</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">Client Work</span>
                         </div>
                         <div class="project-links">
@@ -1644,7 +1644,20 @@
                 skillsTitle: 'Habilidades Técnicas',
                 skillsSubtitle: 'Tecnologías y herramientas que domino',
                 projectsTitle: 'Mis Proyectos',
-                projectsSubtitle: 'Una selección de mis mejores trabajos',
+                projectsSubtitle: 'Proyectos reales en producción y trabajos terminados para clientes',
+                // Project translations
+                projectFinDashboardTitle: 'FinDashboard Pro',
+                projectFinDashboardDesc: 'Plataforma SaaS de análisis financiero con IA para startups. Incluye dashboards en tiempo real, predicciones financieras y reportes automáticos.',
+                projectConsultoryTitle: 'Strategic Consulting Solutions',
+                projectConsultoryDesc: 'Landing page profesional para consultora B2B con metodología ISO 9001. Ofrece servicios de consultoría estratégica, excelencia operacional y transformación digital.',
+                projectTechGadgetTitle: 'TechGadget Elite',
+                projectTechGadgetDesc: 'Tienda online premium para smartphones y tecnología. Incluye carrito de compras, countdown timer, testimonios y sistema de pagos completo.',
+                projectDaytonaTitle: 'Daytona Motos - Concesionaria',
+                projectDaytonaDesc: 'Sitio web completo para concesionaria de motocicletas desarrollado con JavaScript, CSS y HTML puro. Incluye catálogo de motos, información de servicios y formulario de contacto.',
+                projectViewDemo: 'Ver Demo',
+                projectViewSite: 'Ver Sitio',
+                projectInProduction: 'En Producción',
+                projectCompleted: 'Proyecto Terminado',
                 contactTitle: 'Contacto',
                 contactSubtitle: '¿Tienes un proyecto en mente? Hablemos',
                 contactFormTitle: 'Envíame un Mensaje',
@@ -1694,6 +1707,19 @@
                 aboutHighlightText: 'I combine modern frontend with intelligent automation and security awareness to create comprehensive solutions that exceed expectations.',
                 skillsTitle: 'Technical Skills',
                 skillsSubtitle: 'Technologies and tools I master',
+                // Project translations
+                projectFinDashboardTitle: 'FinDashboard Pro',
+                projectFinDashboardDesc: 'SaaS platform for financial analysis with AI for startups. Includes real-time dashboards, financial predictions and automatic reports.',
+                projectConsultoryTitle: 'Strategic Consulting Solutions',
+                projectConsultoryDesc: 'Professional landing page for B2B consulting firm with ISO 9001 methodology. Offers strategic consulting, operational excellence and digital transformation services.',
+                projectTechGadgetTitle: 'TechGadget Elite',
+                projectTechGadgetDesc: 'Premium online store for smartphones and technology. Includes shopping cart, countdown timer, testimonials and complete payment system.',
+                projectDaytonaTitle: 'Daytona Motos - Dealership',
+                projectDaytonaDesc: 'Complete website for motorcycle dealership developed with pure JavaScript, CSS and HTML. Includes motorcycle catalog, service information and contact form.',
+                projectViewDemo: 'View Demo',
+                projectViewSite: 'View Site',
+                projectInProduction: 'In Production',
+                projectCompleted: 'Project Completed',
                 projectsTitle: 'My Projects',
                 projectsSubtitle: 'A selection of my best work',
                 contactTitle: 'Contact',
@@ -1805,6 +1831,9 @@
                     subtitle: t.projectsSubtitle
                 });
                 
+                // Update individual projects
+                updateProjects();
+                
                 updateSection('#contact', {
                     tag: t.sectionTagGetInTouch,
                     title: t.contactTitle,
@@ -1886,6 +1915,68 @@
                 console.log('Language update completed successfully');
             } catch (error) {
                 console.error('Error in updateLanguage:', error);
+            }
+        }
+
+        function updateProjects() {
+            try {
+                const t = translations[currentLanguage];
+                if (!t) {
+                    console.error('No translations found for language:', currentLanguage);
+                    return;
+                }
+                
+                console.log('Updating projects translation');
+                
+                // Get all project cards
+                const projectCards = document.querySelectorAll('.project-card');
+                
+                projectCards.forEach((card, index) => {
+                    const titleElement = card.querySelector('.project-title');
+                    const descElement = card.querySelector('.project-description');
+                    const buttons = card.querySelectorAll('.project-links .btn, .project-links .badge');
+                    
+                    // Update based on project index
+                    switch(index) {
+                        case 0: // FinDashboard Pro
+                            if (titleElement) titleElement.textContent = t.projectFinDashboardTitle;
+                            if (descElement) descElement.textContent = t.projectFinDashboardDesc;
+                            break;
+                        case 1: // Strategic Consulting
+                            if (titleElement) titleElement.textContent = t.projectConsultoryTitle;
+                            if (descElement) descElement.textContent = t.projectConsultoryDesc;
+                            break;
+                        case 2: // TechGadget Elite
+                            if (titleElement) titleElement.textContent = t.projectTechGadgetTitle;
+                            if (descElement) descElement.textContent = t.projectTechGadgetDesc;
+                            break;
+                        case 3: // Daytona Motos
+                            if (titleElement) titleElement.textContent = t.projectDaytonaTitle;
+                            if (descElement) descElement.textContent = t.projectDaytonaDesc;
+                            break;
+                    }
+                    
+                    // Update buttons and badges
+                    buttons.forEach(button => {
+                        if (button.classList.contains('btn')) {
+                            if (button.href.includes('daytonamotos')) {
+                                button.textContent = t.projectViewSite;
+                            } else {
+                                button.textContent = t.projectViewDemo;
+                            }
+                        } else if (button.classList.contains('badge')) {
+                            if (button.classList.contains('completed')) {
+                                button.textContent = t.projectCompleted;
+                            } else {
+                                button.textContent = t.projectInProduction;
+                            }
+                        }
+                    });
+                });
+                
+                console.log('Projects translation updated successfully');
+            } catch (error) {
+                console.error('Error in updateProjects:', error);
             }
         }
         
