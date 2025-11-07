@@ -2283,7 +2283,7 @@
             alert.className = 'maintenance-alert';
             alert.innerHTML = `
                 <h3>⚠️ ${text.title}</h3>
-                <p>No disponible. ${text.message}</p>
+                <p>No disponible bonbonito. ${text.message}</p>
                 <button class="btn" onclick="closeMaintenanceAlert()">${text.close}</button>
             `;
             
