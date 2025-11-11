@@ -2298,21 +2298,16 @@
 
         // Download CV Function
         function downloadCV() {
-            const languageTexts = {
-                en: {
-                    title: 'CV Download',
-                    message: 'My CV is currently under maintenance. Please contact me through WhatsApp or other available channels to request a copy.',
-                    close: 'Close'
-                },
-                es: {
-                    title: 'Descarga de CV',
-                    message: 'Mi CV está actualmente en mantenimiento. Por favor, contácteme por WhatsApp u otros canales disponibles para solicitar una copia.',
-                    close: 'Cerrar'
-                }
-            };
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = 'Cv_ale.pdf';
+            link.download = 'Cv_ale.pdf';
+            link.target = '_blank';
             
-            const text = languageTexts[currentLanguage];
-            showMaintenanceAlert('CV');
+            // Trigger the download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         // Scroll to Top
