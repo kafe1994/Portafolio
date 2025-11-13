@@ -604,7 +604,7 @@
           background: var(--dark-gray);
           padding: var(--space-lg);
           border-radius: var(--radius-lg);
-          border-left: 4px solid var(--accent-orange);
+          border-left: 4px solid var(--accent-blue);
           margin-top: var(--space-lg);
         }
 
@@ -1694,6 +1694,30 @@
                     </div>
                 </div>
                 
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/veterinaria-miniatura.jpg" alt="Veterinaria - Clínica Veterinaria" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">Clínica Veterinaria</h3>
+                                <p class="project-description">Sitio web profesional para clínica veterinaria con diseño moderno y amigable. Incluye servicios veterinarios, información de contacto, horarios de atención y galería de instalaciones.</p>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Healthcare</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://veterinaria-9nr.pages.dev" target="_blank" class="btn btn-primary">Ver Demo</a>
+                            <span class="badge">En Producción</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Proyecto Terminado para Cliente -->
                 <div class="project-card completed">
                     <div class="project-image">
@@ -1825,6 +1849,8 @@
                 projectConsultoryDesc: 'Landing page profesional para consultora B2B con metodología ISO 9001. Ofrece servicios de consultoría estratégica, excelencia operacional y transformación digital.',
                 projectTechGadgetTitle: 'TechGadget Elite',
                 projectTechGadgetDesc: 'Tienda online premium para smartphones y tecnología. Incluye carrito de compras, countdown timer, testimonios y sistema de pagos completo.',
+                projectVeterinariaTitle: 'Clínica Veterinaria',
+                projectVeterinariaDesc: 'Sitio web profesional para clínica veterinaria con diseño moderno y amigable. Incluye servicios veterinarios, información de contacto, horarios de atención y galería de instalaciones.',
                 projectDaytonaTitle: 'Daytona Motos - Concesionaria',
                 projectDaytonaDesc: 'Sitio web completo para concesionaria de motocicletas desarrollado con JavaScript, CSS y HTML puro. Incluye catálogo de motos, información de servicios y formulario de contacto.',
                 projectViewDemo: 'Ver Demo',
@@ -1887,6 +1913,8 @@
                 projectConsultoryDesc: 'Professional landing page for B2B consulting firm with ISO 9001 methodology. Offers strategic consulting, operational excellence and digital transformation services.',
                 projectTechGadgetTitle: 'TechGadget Elite',
                 projectTechGadgetDesc: 'Premium online store for smartphones and technology. Includes shopping cart, countdown timer, testimonials and complete payment system.',
+                projectVeterinariaTitle: 'Veterinary Clinic',
+                projectVeterinariaDesc: 'Professional website for veterinary clinic with modern and friendly design. Includes veterinary services, contact information, opening hours and facilities gallery.',
                 projectDaytonaTitle: 'Daytona Motos - Dealership',
                 projectDaytonaDesc: 'Complete website for motorcycle dealership developed with pure JavaScript, CSS and HTML. Includes motorcycle catalog, service information and contact form.',
                 projectViewDemo: 'View Demo',
@@ -2123,7 +2151,11 @@
                             if (titleElement) titleElement.textContent = t.projectTechGadgetTitle;
                             if (descElement) descElement.textContent = t.projectTechGadgetDesc;
                             break;
-                        case 3: // Daytona Motos
+                        case 3: // Clínica Veterinaria
+                            if (titleElement) titleElement.textContent = t.projectVeterinariaTitle;
+                            if (descElement) descElement.textContent = t.projectVeterinariaDesc;
+                            break;
+                        case 4: // Daytona Motos
                             if (titleElement) titleElement.textContent = t.projectDaytonaTitle;
                             if (descElement) descElement.textContent = t.projectDaytonaDesc;
                             break;

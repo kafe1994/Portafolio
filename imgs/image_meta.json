@@ -1,0 +1,47 @@
+[
+  {
+    "query": "A professional, modern veterinary clinic image with animals, clean and welcoming atmosphere for a website project thumbnail",
+    "image_info": {
+      "url": "https://c8.alamy.com/comp/2RE47KA/young-veterinarian-posing-with-cute-domestic-animal-healthy-pet-on-a-check-up-visit-in-modern-veterinary-clinic-with-a-professional-2RE47KA.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 76374,
+      "width": 1300,
+      "height": 821,
+      "total_pixels": 1067300,
+      "basic_score": 0.9299871729069484,
+      "file_name": "veterinaria_thumbnail_3.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "A professional, modern veterinary clinic image with animals, clean and welcoming atmosphere for a website project thumbnail",
+    "image_info": {
+      "url": "https://as1.ftcdn.net/jpg/16/53/18/08/1000_F_1653180805_8TJSiMryINR5rHUV5EZakgQmC9FnQlXZ.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 120452,
+      "width": 1000,
+      "height": 667,
+      "total_pixels": 667000,
+      "basic_score": 0.8991364276498081,
+      "file_name": "veterinaria_thumbnail_4.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "A professional, modern veterinary clinic image with animals, clean and welcoming atmosphere for a website project thumbnail",
+    "image_info": {
+      "url": "https://thumbs.dreamstime.com/b/veterinarian-examining-dog-owner-present-bright-modern-clinic-female-conducting-health-examination-male-370021512.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 52792,
+      "width": 800,
+      "height": 533,
+      "total_pixels": 426400,
+      "basic_score": 0.8301336354716392,
+      "file_name": "veterinaria_thumbnail_8.jpg"
+    },
+    "llm_score": null
+  }
+]
