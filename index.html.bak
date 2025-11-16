@@ -1790,7 +1790,7 @@
                         </div>
                         <div class="contact-details">
                             <h4 id="whatsapp-title">WhatsApp</h4>
-                            <a href="https://wa.me/5493572408928" target="_blank">+54 3572 597 714</a>
+                            <a href="https://wa.me/5493572408928" target="_blank">+54 3572 408 928</a>
                             <p id="whatsapp-desc">Immediate response</p>
                         </div>
                     </div>
@@ -1800,7 +1800,7 @@
     </section>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/5493572597714" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/5493572408928" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <img src="assets/images/whatsapp-button_0.jpg" alt="WhatsApp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
     </a>
 
