@@ -72,7 +72,7 @@
           --gradient-accent: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-orange) 100%);
           --gradient-text: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-orange) 100%);
           
-          /* SOLUCIÓN 1: Gradientes para skills en negro, blanco y gris */
+          /* Gradientes para skills en negro, blanco y gris */
           --gradient-skills: linear-gradient(135deg, var(--primary-black) 0%, var(--medium-gray) 50%, var(--pure-white) 100%);
           --gradient-skills-alt: linear-gradient(90deg, var(--light-gray) 0%, var(--pure-white) 100%);
           
@@ -214,6 +214,7 @@
         .btn {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: var(--space-sm);
           padding: var(--space-sm) var(--space-lg);
           border: 1px solid var(--medium-gray);
@@ -229,6 +230,7 @@
           background: var(--secondary-black);
           color: var(--pure-white);
           box-shadow: var(--shadow-sm);
+          min-height: 44px;
         }
 
         .btn:hover {
@@ -392,7 +394,7 @@
           justify-content: center;
           position: relative;
           overflow: hidden;
-          padding-top: 60px; /* Compensar header compacto */
+          padding-top: 60px;
         }
         
         /* Desktop optimization for hero */
@@ -429,6 +431,9 @@
         .hero-content {
           text-align: center;
           z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .hero-greeting {
@@ -453,6 +458,11 @@
           margin-bottom: var(--space-md);
           opacity: 0;
           animation: fadeIn 0.6s ease-out 0.6s forwards;
+          min-height: 1.5em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
         }
 
         .hero-subtitle {
@@ -560,9 +570,15 @@
 
         .about-content {
           display: grid;
-          grid-template-columns: 1fr 2fr;
+          grid-template-columns: 1fr;
           gap: var(--space-3xl);
           align-items: start;
+        }
+
+        @media (min-width: 768px) {
+          .about-content {
+            grid-template-columns: 1fr 2fr;
+          }
         }
 
         .about-personal {
@@ -616,12 +632,22 @@
 
         .skills-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: 1fr;
           gap: var(--space-xl);
+        }
+
+        @media (min-width: 768px) {
+          .skills-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          }
         }
 
         .skill-category {
           margin-bottom: var(--space-2xl);
+        }
+
+        .skill-category:last-child {
+          margin-bottom: 0;
         }
 
         .skill-category h3 {
@@ -636,6 +662,10 @@
           border-radius: var(--radius-lg);
           margin-bottom: var(--space-md);
           transition: all var(--transition-normal);
+        }
+
+        .skill-item:last-child {
+          margin-bottom: 0;
         }
 
         .skill-item:hover {
@@ -658,12 +688,18 @@
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          flex-shrink: 0;
         }
 
         .skill-icon img {
           width: 100%;
           height: 100%;
           object-fit: contain;
+        }
+
+        .skill-info {
+          flex: 1;
+          min-width: 0;
         }
 
         .skill-info h4 {
@@ -686,7 +722,7 @@
 
         .skill-progress {
           height: 100%;
-          /* SOLUCIÓN 1: Aplicar gradiente de negro, blanco y gris */
+          /* Aplicar gradiente de negro, blanco y gris */
           background: var(--gradient-skills);
           border-radius: var(--radius-full);
           transition: width 1s ease-in-out;
@@ -704,8 +740,14 @@
 
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          grid-template-columns: 1fr;
           gap: var(--space-xl);
+        }
+
+        @media (min-width: 768px) {
+          .projects-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          }
         }
 
         .project-card {
@@ -714,6 +756,8 @@
           overflow: hidden;
           transition: all var(--transition-normal);
           border: 1px solid var(--medium-gray);
+          display: flex;
+          flex-direction: column;
         }
 
         .project-card:hover {
@@ -730,24 +774,28 @@
           justify-content: center;
           color: var(--pure-white);
           font-size: var(--text-sm);
-          overflow: hidden; /* Asegurar que las imágenes no se salgan del contenedor */
+          overflow: hidden;
+          flex-shrink: 0;
         }
 
-        /* SOLUCIÓN 2: Estilos para imágenes de proyectos */
+        /* Estilos para imágenes de proyectos */
         .project-image img {
           width: 100%;
           height: 100%;
-          object-fit: cover; /* Cubre todo el contenedor manteniendo proporción */
-          object-position: center; /* Centra la imagen */
+          object-fit: cover;
+          object-position: center;
           transition: transform 0.3s ease;
         }
 
         .project-card:hover .project-image img {
-          transform: scale(1.05); /* Efecto zoom suave al hacer hover */
+          transform: scale(1.05);
         }
 
         .project-content {
           padding: var(--space-lg);
+          display: flex;
+          flex-direction: column;
+          flex: 1;
         }
 
         .project-header {
@@ -757,6 +805,11 @@
           margin-bottom: var(--space-md);
         }
 
+        .project-header > div {
+          flex: 1;
+          min-width: 0;
+        }
+
         .project-title {
           font-size: var(--text-xl);
           margin-bottom: var(--space-sm);
@@ -764,6 +817,7 @@
 
         .project-description {
           margin-bottom: var(--space-md);
+          word-wrap: break-word;
         }
 
         .project-tech {
@@ -792,6 +846,7 @@
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
+          white-space: nowrap;
         }
 
         .badge {
@@ -835,6 +890,7 @@
           gap: var(--space-md);
           align-items: center;
           flex-wrap: wrap;
+          margin-top: auto;
         }
 
         /* Contact Section */
@@ -845,8 +901,14 @@
 
         .contact-content {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
           gap: var(--space-3xl);
+        }
+
+        @media (min-width: 768px) {
+          .contact-content {
+            grid-template-columns: 2fr 1fr;
+          }
         }
 
         .contact-form {
@@ -855,8 +917,18 @@
           border-radius: var(--radius-xl);
         }
 
+        @media (min-width: 768px) {
+          .contact-form {
+            padding: var(--space-2xl);
+          }
+        }
+
         .form-group {
           margin-bottom: var(--space-lg);
+        }
+
+        .form-group:last-child {
+          margin-bottom: 0;
         }
 
         .form-group label {
@@ -892,7 +964,6 @@
 
         .contact-form {
           background: var(--dark-gray);
-          padding: var(--space-2xl);
           border-radius: var(--radius-2xl);
           position: relative;
           overflow: hidden;
@@ -922,23 +993,16 @@
           font-size: var(--text-base);
         }
 
-        .contact-content {
-          display: grid;
-          grid-template-columns: 2fr 1fr;
-          gap: var(--space-3xl);
-          align-items: start;
-        }
-
         .contact-info {
           display: flex;
           flex-direction: column;
           gap: var(--space-xl);
         }
 
-        .contact-info {
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-lg);
+        @media (min-width: 768px) {
+          .contact-info {
+            gap: var(--space-lg);
+          }
         }
 
         .contact-item {
@@ -965,6 +1029,7 @@
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          flex-shrink: 0;
         }
 
         .contact-icon img {
@@ -989,7 +1054,7 @@
           right: 30px;
           width: 60px;
           height: 60px;
-          background: #25D366; /* WhatsApp green */
+          background: #25D366;
           border: 2px solid #128C7E;
           border-radius: 50%;
           display: flex;
@@ -1004,7 +1069,7 @@
         }
 
         .whatsapp-btn:hover {
-          background: #128C7E; /* Darker WhatsApp green */
+          background: #128C7E;
           border-color: #075E54;
           transform: scale(1.1) translateY(-2px);
           box-shadow: var(--shadow-2xl);
@@ -1017,7 +1082,7 @@
           right: 30px;
           width: 60px;
           height: 60px;
-          background: #1DBF73; /* Fiverr green */
+          background: #1DBF73;
           border: 2px solid #1DAF63;
           border-radius: 50%;
           display: flex;
@@ -1032,7 +1097,7 @@
         }
 
         .fiverr-btn:hover {
-          background: #1DAF63; /* Darker Fiverr green */
+          background: #1DAF63;
           border-color: #19A95A;
           transform: scale(1.1) translateY(-2px);
           box-shadow: var(--shadow-2xl);
@@ -1234,20 +1299,20 @@
         .language-btn {
           display: flex;
           align-items: center;
-          gap: 4px;
-          padding: 4px 8px;
+          gap: 6px;
+          padding: 6px 12px;
           background: var(--secondary-black);
           border: 1px solid var(--medium-gray);
           border-radius: var(--radius-md);
           color: var(--pure-white);
           cursor: pointer;
           transition: all var(--transition-normal);
-          font-size: var(--text-xs);
+          font-size: var(--text-sm);
           font-weight: 500;
           box-shadow: var(--shadow-sm);
-          min-width: 50px;
+          min-width: 70px;
           justify-content: center;
-          height: 32px;
+          height: 36px;
         }
 
         .language-btn:hover {
@@ -1271,7 +1336,7 @@
           align-items: center;
           justify-content: center;
           color: var(--pure-white);
-          font-size: 8px;
+          font-size: 10px;
           font-weight: bold;
         }
 
@@ -1326,7 +1391,7 @@
                 <a href="#hero" class="logo">AJL</a>
                 <div class="language-selector">
                     <button class="language-btn" onclick="toggleLanguage()">
-                        <span id="flag-icon" style="font-size: 16px;">🇪🇸</span>
+                        <span id="flag-icon" style="font-size: 14px;">🇪🇸</span>
                         <span id="current-lang-text">ES</span>
                     </button>
                 </div>
@@ -1338,7 +1403,7 @@
     <section id="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-greeting">Hello, I am</div>
+                <div class="hero-greeting">Hola, soy</div>
                 
                 <div class="profile-image">
                     <img src="assets/images/profile-photo.jpg" alt="Alejandro Javier Liendo">
@@ -1347,20 +1412,19 @@
                 <h1 class="hero-name">Alejandro Javier Liendo</h1>
                 
                 <div class="hero-title">
-                    <span id="animated-role">Frontend Developer</span>
+                    <span id="animated-role">Desarrollador Frontend</span>
                     <span id="typing-cursor">|</span>
                 </div>
                 
-                <p class="hero-subtitle">4 years creating efficient, secure and automated digital solutions</p>
+                <p class="hero-subtitle">4 años creando soluciones digitales eficientes, seguras y automatizadas</p>
                 
                 <p class="hero-description">
-                    I am a self-taught developer, 31 years old, from Córdoba, Argentina. I specialize in creating 
-                    exceptional web experiences combining modern frontend, intelligent automation and security awareness.
+                    Soy un desarrollador autodidacta de 31 años de Córdoba, Argentina. Me especializo en crear experiencias web excepcionales combinando frontend moderno, automatización inteligente y conciencia de seguridad.
                 </p>
                 
                 <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View My Projects</a>
-                    <button class="btn btn-outline" onclick="downloadCV()">Download CV</button>
+                    <a href="#projects" class="btn btn-primary">Ver Mis Proyectos</a>
+                    <button class="btn btn-outline" onclick="downloadCV()">Descargar CV</button>
                 </div>
                 
                 <div class="hero-social">
@@ -1388,9 +1452,9 @@
     <section id="about" class="animate-on-scroll">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Portfolio</div>
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Learn about my story and passion for technology</p>
+                <div class="section-tag">Portafolio</div>
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="section-subtitle">Conoce mi historia y pasión por la tecnología</p>
             </div>
             
             <div class="about-content">
@@ -1398,23 +1462,23 @@
                     <div class="about-avatar">👨‍💻</div>
                     <div class="about-info">
                         <h3>Alejandro Javier Liendo</h3>
-                        <p id="about-role">Frontend Developer & Automation Specialist</p>
+                        <p id="about-role">Desarrollador Frontend & Especialista en Automatización</p>
                         <p id="about-location">📍 Córdoba, Argentina</p>
-                        <p id="about-age">📅 31 years old</p>
-                        <p id="about-experience">💻 4+ years experience</p>
+                        <p id="about-age">📅 31 años</p>
+                        <p id="about-experience">💻 4+ años experiencia</p>
                     </div>
                 </div>
                 
                 <div class="about-description">
-                    <p id="about-story-1">I am Alejandro, a 31-year-old frontend developer located in Córdoba, Argentina. My journey in the world of technology began as a curiosity that quickly transformed into an overwhelming passion.</p>
+                    <p id="about-story-1">Soy Alejandro, un desarrollador frontend de 31 años ubicado en Córdoba, Argentina. Mi recorrido en el mundo de la tecnología comenzó como una curiosidad que rápidamente se transformó en una pasión desbordante.</p>
                     
-                    <p id="about-story-2">With 4 years of experience in frontend development, I have specialized in creating modern, intuitive and responsive user interfaces. My self-taught approach has allowed me to stay updated with the latest trends and technologies in the market.</p>
+                    <p id="about-story-2">Con 4 años de experiencia en desarrollo frontend, me he especializado en crear interfaces de usuario modernas, intuitivas y responsivas. Mi enfoque autodidacta me ha permitido mantenerme actualizado con las últimas tendencias y tecnologías del mercado.</p>
                     
-                    <p id="about-story-3">What distinguishes me is my ability to combine multiple disciplines: frontend development, automation with Python, and cybersecurity knowledge. This unique combination allows me to create comprehensive solutions that go beyond visual design.</p>
+                    <p id="about-story-3">Lo que me distingue es mi capacidad para combinar múltiples disciplinas: desarrollo frontend, automatización con Python, y conocimientos de ciberseguridad. Esta combinación única me permite crear soluciones integrales que van más allá del diseño visual.</p>
                     
                     <div class="about-highlight">
-                        <h4 id="about-highlight-title">💡 My Unique Approach</h4>
-                        <p id="about-highlight-text">I combine modern frontend with intelligent automation and security awareness to create comprehensive solutions that exceed expectations.</p>
+                        <h4 id="about-highlight-title">💡 Mi Enfoque Único</h4>
+                        <p id="about-highlight-text">Combino frontend moderno con automatización inteligente y conciencia de seguridad para crear soluciones integrales que superan las expectativas.</p>
                     </div>
                 </div>
             </div>
@@ -1425,9 +1489,9 @@
     <section id="skills" class="animate-on-scroll">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Expertise</div>
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">Technologies and tools I master</p>
+                <div class="section-tag">Experiencia</div>
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <p class="section-subtitle">Tecnologías y herramientas que domino</p>
             </div>
             
             <div class="skills-grid">
@@ -1518,7 +1582,7 @@
                 
                 <!-- Backend Skills -->
                 <div class="skill-category">
-                    <h3 id="backend-skill-title">Backend & Automation</h3>
+                    <h3 id="backend-skill-title">Backend & Automatización</h3>
                     
                     <div class="skill-item">
                         <div class="skill-header">
@@ -1555,7 +1619,7 @@
                 
                 <!-- Security & Design -->
                 <div class="skill-category">
-                    <h3 id="security-skill-title">Security & Design</h3>
+                    <h3 id="security-skill-title">Seguridad & Diseño</h3>
                     
                     <div class="skill-item">
                         <div class="skill-header">
@@ -1563,7 +1627,7 @@
                                 <img src="assets/images/skills/security.png" alt="Cybersecurity">
                             </div>
                             <div class="skill-info">
-                                <h4>Cybersecurity</h4>
+                                <h4>Ciberseguridad</h4>
                                 <span class="skill-level">Intermedio - 80%</span>
                             </div>
                         </div>
@@ -1579,7 +1643,7 @@
                                 <img src="assets/images/skills/design.png" alt="UI/UX Design">
                             </div>
                             <div class="skill-info">
-                                <h4>UI/UX Design</h4>
+                                <h4>Diseño UI/UX</h4>
                                 <span class="skill-level">Intermedio - 75%</span>
                             </div>
                         </div>
@@ -1613,85 +1677,65 @@
     <section id="projects" class="animate-on-scroll">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Portfolio</div>
-                <h2 class="section-title">My Projects</h2>
-                <p class="section-subtitle">Real projects in production and finished work for clients</p>
+                <div class="section-tag">Portafolio</div>
+                <h2 class="section-title">Mis Proyectos</h2>
+                <p class="section-subtitle">Proyectos finalizados y trabajos para clientes</p>
             </div>
             
             <div class="projects-grid">
-                <!-- Proyectos en Producción/Landing Pages -->
-                <div class="project-card">
+                <!-- Seedvault - Bitcoin Mining Simulator -->
+                <div class="project-card completed">
                     <div class="project-image">
-                        <img src="assets/images/projects/findashboard-miniatura.jpg" alt="FinDashboard Pro - SaaS Platform" loading="lazy">
+                        <img src="assets/images/projects/seedvault-miniatura.svg" alt="Seedvault - Bitcoin Mining Simulator" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <div>
-                                <h3 class="project-title">FinDashboard Pro</h3>
-                                <p class="project-description">Plataforma SaaS de análisis financiero con IA para startups. Incluye dashboards en tiempo real, predicciones financieras y reportes automáticos.</p>
+                                <h3 class="project-title">Seedvault</h3>
+                                <p class="project-description">Simulador educativo de minería de Bitcoin con interfaz moderna e interactiva. Permite a los usuarios experimentar con conceptos de minería criptográfica, gestión de recursos y estrategias de inversión en un entorno seguro y controlado.</p>
                             </div>
                         </div>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">AI/ML</span>
-                            <span class="tech-tag">SaaS</span>
+                            <span class="tech-tag">Crypto</span>
+                            <span class="tech-tag">Vite</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://pagesaas.pages.dev/" target="_blank" class="btn btn-primary">Ver Demo</a>
-                            <span class="badge">En Producción</span>
+                            <a href="https://seedvault.pages.dev" target="_blank" class="btn btn-primary">Ver Sitio</a>
+                            <span class="badge completed">Proyecto Terminado</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <!-- AIMSATS - Bitcoin Earning Game -->
+                <div class="project-card completed">
                     <div class="project-image">
-                        <img src="assets/images/projects/consultory-miniatura.jpg" alt="Strategic Consulting Solutions - B2B Platform" loading="lazy">
+                        <img src="assets/images/projects/aimsats-miniatura.svg" alt="AIMSATS - Bitcoin Earning Game App" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <div>
-                                <h3 class="project-title">Strategic Consulting Solutions</h3>
-                                <p class="project-description">Landing page profesional para consultora B2B con metodología ISO 9001. Ofrece servicios de consultoría estratégica, excelencia operacional y transformación digital.</p>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">B2B</span>
-                            <span class="tech-tag">Consulting</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://consultory.pages.dev/" target="_blank" class="btn btn-primary">Ver Demo</a>
-                            <span class="badge">En Producción</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/projects/techgadget-miniatura.jpg" alt="TechGadget Elite - E-commerce" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div>
-                                <h3 class="project-title">TechGadget Elite</h3>
-                                <p class="project-description">Tienda online premium para smartphones y tecnología. Incluye carrito de compras, countdown timer, testimonios y sistema de pagos completo.</p>
+                                <h3 class="project-title">AIMSATS</h3>
+                                <p class="project-description">Aplicación play-to-earn que permite a los usuarios ganar Bitcoin jugando minijuegos innovadores. Implementa el Neural Link Protocol y está asegurada por Lightning Network para transacciones rápidas y seguras con recompensas en satoshis.</p>
                             </div>
                         </div>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">E-commerce</span>
-                            <span class="tech-tag">Payment</span>
+                            <span class="tech-tag">Lightning Network</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Bitcoin</span>
+                            <span class="tech-tag">Vite</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://tech-b7e.pages.dev/" target="_blank" class="btn btn-primary">Ver Demo</a>
-                            <span class="badge">En Producción</span>
+                            <a href="https://aimsats.pages.dev" target="_blank" class="btn btn-primary">Ver Sitio</a>
+                            <span class="badge completed">Proyecto Terminado</span>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Veterinaria - Clínica Veterinaria -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="assets/images/projects/veterinaria-miniatura.jpg" alt="Veterinaria - Clínica Veterinaria" loading="lazy">
@@ -1748,36 +1792,36 @@
     <section id="contact" class="animate-on-scroll">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Get In Touch</div>
-                <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Have a project in mind? Let's talk</p>
+                <div class="section-tag">Ponte en Contacto</div>
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">¿Tienes un proyecto en mente? Hablemos</p>
             </div>
             
             <div class="contact-content">
                 <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <p>Fill out the form and I will respond as soon as possible</p>
+                    <h3>Envíame un Mensaje</h3>
+                    <p>Completa el formulario y te responderé lo antes posible</p>
                     
                     <div id="form-messages"></div>
                     
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Nombre</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Subject</label>
+                            <label for="subject">Asunto</label>
                             <input type="text" id="subject" name="subject" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message">Mensaje</label>
                             <textarea id="message" name="message" rows="6" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary">
-                            <span id="submit-text">Send Message</span>
+                            <span id="submit-text">Enviar Mensaje</span>
                             <div id="submit-loading" class="loading" style="display: none;"></div>
                         </button>
                     </form>
@@ -1793,7 +1837,7 @@
                         <div class="contact-details">
                             <h4 id="whatsapp-title">WhatsApp</h4>
                             <a href="https://wa.me/5493572597714" target="_blank">+54 3572 597714</a>
-                            <p id="whatsapp-desc">Immediate response</p>
+                            <p id="whatsapp-desc">Respuesta inmediata</p>
                         </div>
                     </div>
                 </div>
@@ -1810,13 +1854,14 @@
     <a href="https://es.fiverr.com/s/LdYpGGA" class="fiverr-btn" target="_blank" rel="noopener noreferrer" title="My Fiverr Services">
         <img src="assets/images/fiverr.png" alt="Fiverr" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
     </a>
+    
     <!-- Scroll to Top Button -->
     <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
         ↑
     </button>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                // Language Support with Roles
+        // Language Support with Roles
         const translations = {
             es: {
                 greeting: 'Hola, soy',
@@ -1839,14 +1884,12 @@
                 skillsTitle: 'Habilidades Técnicas',
                 skillsSubtitle: 'Tecnologías y herramientas que domino',
                 projectsTitle: 'Mis Proyectos',
-                projectsSubtitle: 'Proyectos reales en producción y trabajos terminados para clientes',
+                projectsSubtitle: 'Proyectos finalizados y trabajos para clientes',
                 // Project translations
-                projectFinDashboardTitle: 'FinDashboard Pro',
-                projectFinDashboardDesc: 'Plataforma SaaS de análisis financiero con IA para startups. Incluye dashboards en tiempo real, predicciones financieras y reportes automáticos.',
-                projectConsultoryTitle: 'Strategic Consulting Solutions',
-                projectConsultoryDesc: 'Landing page profesional para consultora B2B con metodología ISO 9001. Ofrece servicios de consultoría estratégica, excelencia operacional y transformación digital.',
-                projectTechGadgetTitle: 'TechGadget Elite',
-                projectTechGadgetDesc: 'Tienda online premium para smartphones y tecnología. Incluye carrito de compras, countdown timer, testimonios y sistema de pagos completo.',
+                projectSeedvaultTitle: 'Seedvault',
+                projectSeedvaultDesc: 'Simulador educativo de minería de Bitcoin con interfaz moderna e interactiva. Permite a los usuarios experimentar con conceptos de minería criptográfica, gestión de recursos y estrategias de inversión en un entorno seguro y controlado.',
+                projectAimsatsTitle: 'AIMSATS',
+                projectAimsatsDesc: 'Aplicación play-to-earn que permite a los usuarios ganar Bitcoin jugando minijuegos innovadores. Implementa el Neural Link Protocol y está asegurada por Lightning Network para transacciones rápidas y seguras con recompensas en satoshis.',
                 projectVeterinariaTitle: 'Clínica Veterinaria',
                 projectVeterinariaDesc: 'Sitio web profesional para clínica veterinaria con diseño moderno y amigable. Incluye servicios veterinarios, información de contacto, horarios de atención y galería de instalaciones.',
                 projectDaytonaTitle: 'Daytona Motos - Concesionaria',
@@ -1904,13 +1947,13 @@
                 aboutHighlightText: 'I combine modern frontend with intelligent automation and security awareness to create comprehensive solutions that exceed expectations.',
                 skillsTitle: 'Technical Skills',
                 skillsSubtitle: 'Technologies and tools I master',
+                projectsTitle: 'My Projects',
+                projectsSubtitle: 'Completed projects and client work',
                 // Project translations
-                projectFinDashboardTitle: 'FinDashboard Pro',
-                projectFinDashboardDesc: 'SaaS platform for financial analysis with AI for startups. Includes real-time dashboards, financial predictions and automatic reports.',
-                projectConsultoryTitle: 'Strategic Consulting Solutions',
-                projectConsultoryDesc: 'Professional landing page for B2B consulting firm with ISO 9001 methodology. Offers strategic consulting, operational excellence and digital transformation services.',
-                projectTechGadgetTitle: 'TechGadget Elite',
-                projectTechGadgetDesc: 'Premium online store for smartphones and technology. Includes shopping cart, countdown timer, testimonials and complete payment system.',
+                projectSeedvaultTitle: 'Seedvault',
+                projectSeedvaultDesc: 'Educational Bitcoin mining simulator with a modern and interactive interface. Allows users to experiment with cryptographic mining concepts, resource management, and investment strategies in a safe and controlled environment.',
+                projectAimsatsTitle: 'AIMSATS',
+                projectAimsatsDesc: 'Play-to-earn application that allows users to earn Bitcoin by playing innovative mini-games. Implements the Neural Link Protocol and is secured by Lightning Network for fast and secure transactions with satoshi rewards.',
                 projectVeterinariaTitle: 'Veterinary Clinic',
                 projectVeterinariaDesc: 'Professional website for veterinary clinic with modern and friendly design. Includes veterinary services, contact information, opening hours and facilities gallery.',
                 projectDaytonaTitle: 'Daytona Motos - Dealership',
@@ -1919,8 +1962,6 @@
                 projectViewSite: 'View Site',
                 projectInProduction: 'In Production',
                 projectCompleted: 'Project Completed',
-                projectsTitle: 'My Projects',
-                projectsSubtitle: 'A selection of my best work',
                 contactTitle: 'Contact',
                 contactSubtitle: 'Have a project in mind? Let\'s talk',
                 contactFormTitle: 'Send Me a Message',
@@ -2141,23 +2182,19 @@
                     
                     // Update based on project index
                     switch(index) {
-                        case 0: // FinDashboard Pro
-                            if (titleElement) titleElement.textContent = t.projectFinDashboardTitle;
-                            if (descElement) descElement.textContent = t.projectFinDashboardDesc;
+                        case 0: // Seedvault
+                            if (titleElement) titleElement.textContent = t.projectSeedvaultTitle;
+                            if (descElement) descElement.textContent = t.projectSeedvaultDesc;
                             break;
-                        case 1: // Strategic Consulting
-                            if (titleElement) titleElement.textContent = t.projectConsultoryTitle;
-                            if (descElement) descElement.textContent = t.projectConsultoryDesc;
+                        case 1: // AIMSATS
+                            if (titleElement) titleElement.textContent = t.projectAimsatsTitle;
+                            if (descElement) descElement.textContent = t.projectAimsatsDesc;
                             break;
-                        case 2: // TechGadget Elite
-                            if (titleElement) titleElement.textContent = t.projectTechGadgetTitle;
-                            if (descElement) descElement.textContent = t.projectTechGadgetDesc;
-                            break;
-                        case 3: // Clínica Veterinaria
+                        case 2: // Clínica Veterinaria
                             if (titleElement) titleElement.textContent = t.projectVeterinariaTitle;
                             if (descElement) descElement.textContent = t.projectVeterinariaDesc;
                             break;
-                        case 4: // Daytona Motos
+                        case 3: // Daytona Motos
                             if (titleElement) titleElement.textContent = t.projectDaytonaTitle;
                             if (descElement) descElement.textContent = t.projectDaytonaDesc;
                             break;
@@ -2437,7 +2474,7 @@
         
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            // Set initial language to English
+            // Set initial language to Spanish
             updateLanguage();
             
             // Start role animation
