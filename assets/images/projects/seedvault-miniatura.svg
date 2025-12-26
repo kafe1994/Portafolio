@@ -1,108 +1,53 @@
-<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="400" height="280" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Dark gradient background -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117"/>
-      <stop offset="50%" style="stop-color:#161b22"/>
-      <stop offset="100%" style="stop-color:#0d1117"/>
+    <linearGradient id="bg8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
     </linearGradient>
-    
-    <!-- Bitcoin orange gradient -->
-    <linearGradient id="btcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f7931a"/>
-      <stop offset="100%" style="stop-color:#ffab40"/>
+    <linearGradient id="blue8" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0984e3"/>
+      <stop offset="100%" style="stop-color:#74b9ff"/>
     </linearGradient>
-    
-    <!-- Gold gradient for mining -->
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffd700"/>
-      <stop offset="100%" style="stop-color:#b8860b"/>
-    </linearGradient>
-    
-    <!-- Green gradient for success -->
-    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#22c55e"/>
-      <stop offset="100%" style="stop-color:#16a34a"/>
-    </linearGradient>
-    
-    <!-- Glow filter -->
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <!-- Shadow filter -->
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
-    </filter>
   </defs>
   
-  <!-- Background -->
-  <rect width="400" height="250" fill="url(#bgGrad)"/>
+  <rect width="400" height="280" fill="url(#bg8)"/>
   
-  <!-- Grid pattern overlay -->
-  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#30363d" stroke-width="0.5"/>
-  </pattern>
-  <rect width="400" height="250" fill="url(#grid)" opacity="0.5"/>
-  
-  <!-- Left side: Bitcoin circle -->
-  <g transform="translate(80, 125)" filter="url(#shadow)">
-    <circle r="55" fill="url(#btcGrad)"/>
-    <circle r="50" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
-    <!-- Bitcoin B symbol -->
-    <text x="0" y="12" font-family="Arial Black, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">₿</text>
-    <!-- Two vertical lines -->
-    <rect x="-18" y="-28" width="6" height="56" fill="white" opacity="0.9"/>
-    <rect x="12" y="-28" width="6" height="56" fill="white" opacity="0.9"/>
-    <rect x="-18" y="28" width="36" height="6" fill="white" opacity="0.9"/>
+  <!-- Circuit board lines -->
+  <g stroke="#0984e3" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M 0 90 L 60 90 L 80 110 L 150 110"/>
+    <path d="M 400 130 L 320 130 L 280 90 L 200 90"/>
+    <path d="M 0 190 L 50 190 L 70 170 L 120 170"/>
+    <path d="M 400 70 L 340 70 L 320 90 L 250 90"/>
+    <circle cx="60" cy="90" r="5" fill="#0984e3"/>
+    <circle cx="320" cy="130" r="5" fill="#0984e3"/>
+    <circle cx="50" cy="190" r="5" fill="#0984e3"/>
+    <circle cx="340" cy="70" r="5" fill="#0984e3"/>
   </g>
   
-  <!-- Middle: Mining pickaxe icon -->
-  <g transform="translate(200, 125)" filter="url(#shadow)">
-    <circle r="40" fill="url(#goldGrad)"/>
-    <text x="0" y="14" font-family="Arial" font-size="36" text-anchor="middle">⛏️</text>
+  <!-- CPU chip -->
+  <rect x="150" y="90" width="100" height="80" rx="5" fill="#2d3436" stroke="#0984e3" stroke-width="2"/>
+  <rect x="165" y="105" width="70" height="50" rx="3" fill="#0d1117"/>
+  <text x="200" y="135" font-family="monospace" font-size="10" fill="#0984e3" text-anchor="middle">BTC MINER</text>
+  
+  <!-- Pins -->
+  <g fill="#636e72">
+    <rect x="145" y="95" width="5" height="6"/>
+    <rect x="145" y="110" width="5" height="6"/>
+    <rect x="145" y="125" width="5" height="6"/>
+    <rect x="145" y="140" width="5" height="6"/>
+    <rect x="145" y="155" width="5" height="6"/>
+    <rect x="250" y="95" width="5" height="6"/>
+    <rect x="250" y="110" width="5" height="6"/>
+    <rect x="250" y="125" width="5" height="6"/>
+    <rect x="250" y="140" width="5" height="6"/>
+    <rect x="250" y="155" width="5" height="6"/>
   </g>
   
-  <!-- Right side: Stats and data visualization -->
-  <g transform="translate(320, 80)">
-    <!-- Hash rate indicator -->
-    <rect x="-60" y="0" width="80" height="20" rx="4" fill="#21262d" stroke="#30363d"/>
-    <rect x="-55" y="4" width="50" height="12" rx="2" fill="url(#greenGrad)" filter="url(#glow)">
-      <animate attributeName="width" values="30;50;40;50" dur="2s" repeatCount="indefinite"/>
-    </rect>
-    <text x="-55" y="30" font-family="monospace" font-size="8" fill="#8b949e">Hash Rate</text>
-  </g>
+  <!-- Bitcoin badge -->
+  <circle cx="320" cy="190" r="30" fill="#f7931a"/>
+  <text x="320" y="200" font-family="Arial Black" font-size="24" fill="white" text-anchor="middle">₿</text>
   
-  <g transform="translate(320, 120)">
-    <!-- Bitcoin price indicator -->
-    <rect x="-60" y="0" width="80" height="20" rx="4" fill="#21262d" stroke="#30363d"/>
-    <text x="-50" y="14" font-family="monospace" font-size="10" fill="#22c55e">▲ $43,250</text>
-  </g>
-  
-  <g transform="translate(320, 160)">
-    <!-- Blocks mined -->
-    <rect x="-60" y="0" width="80" height="20" rx="4" fill="#21262d" stroke="#30363d"/>
-    <text x="-50" y="14" font-family="monospace" font-size="10" fill="#f7931a">⚡ 12 Blocks</text>
-  </g>
-  
-  <!-- Title at bottom -->
-  <g transform="translate(200, 225)">
-    <rect x="-100" y="-20" width="200" height="30" rx="6" fill="rgba(22, 27, 34, 0.9)" stroke="#30363d"/>
-    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle" dy="0.3em">SEEDVAULT</text>
-  </g>
-  
-  <!-- Decorative elements -->
-  <circle cx="50" cy="40" r="2" fill="#f7931a" opacity="0.6">
-    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="350" cy="60" r="1.5" fill="#ffd700" opacity="0.4">
-    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="30" cy="200" r="2" fill="#22c55e" opacity="0.5">
-    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="4s" repeatCount="indefinite"/>
-  </circle>
+  <!-- Title -->
+  <text x="200" y="245" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0984e3" text-anchor="middle">SEEDVAULT</text>
+  <text x="200" y="263" font-family="Arial" font-size="9" fill="#74b9ff" text-anchor="middle">HARDWARE MINING SIMULATION</text>
 </svg>
