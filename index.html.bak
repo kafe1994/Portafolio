@@ -1913,7 +1913,7 @@
                 sectionTagExpertise: 'Experiencia',
                 sectionTagGetInTouch: 'Ponte en Contacto',
                 viewDemo: 'Ver Demo',
-                viewCode: 'Ver Demo',
+                viewCode: 'Ver Código',
                 frontendTitle: 'Frontend',
                 backendTitle: 'Backend & Automatización',
                 securityTitle: 'Seguridad & Diseño',
